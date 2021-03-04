@@ -67,7 +67,7 @@ function draw() {
   if(starGroup. isTouching(player)){
     starGroup.destroyEach();
     score = score+2;
-    player.scale += 0.030;
+    player.velocityX = player.velocityX+1.5
   }
   
   if(obstacleGroup . isTouching(player)) {
