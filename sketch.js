@@ -90,12 +90,12 @@ else if (gameState === END) {
   backgr.velocityX = 0;
   player.velocityY = 0;
   obstacleGroup.setVelocityXEach(0);
-  FoodGroup.setVelocityXEach(0);
+  starGroup.setVelocityXEach(0);
  
   
   //set lifetime of the game objects so that they are never destroyed
   obstacleGroup.setLifetimeEach(-1);
-  FoodGroup.setLifetimeEach(-1);
+  starGroup.setLifetimeEach(-1);
   
 }
 
