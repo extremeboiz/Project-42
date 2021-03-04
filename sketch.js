@@ -1,7 +1,7 @@
 var backImage,backgr;
 var player, player_running;
 var ground,ground_img;
-var FoodGroup, obstacleGroup;
+var starGroup, obstacleGroup;
 var END =0;
 var PLAY =1;
 var score = 0;
@@ -12,9 +12,9 @@ var gameOver,gameOverImg;
 
 function preload(){
   backImage=loadImage("jungle.jpg");
-  player_running = loadAnimation("Monkey_01.png","Monkey_02.png","Monkey_03.png","Monkey_04.png","Monkey_05.png","Monkey_06.png","Monkey_07.png","Monkey_08.png","Monkey_09.png","Monkey_10.png");
-  starImage = loadImage("banana.png");
-  obstacleImage = loadImage("stone.png");
+  player_running = loadAnimation("mario-running0.png", "mario-running1.png", "mario-running2.png");
+  starImage = loadImage("star2.png");
+  obstacleImage = loadImage("galoomba_orig.png");
   gameOverImg = loadImage("gameOver.png");
 }
 
