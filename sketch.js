@@ -6,14 +6,14 @@ var END =0;
 var PLAY =1;
 var score = 0;
 var gameState = PLAY;
-var banana,bananaImage;
+var star,starImage;
 var obstacle,obstacleImage;
 var gameOver,gameOverImg;
 
 function preload(){
   backImage=loadImage("jungle.jpg");
   player_running = loadAnimation("Monkey_01.png","Monkey_02.png","Monkey_03.png","Monkey_04.png","Monkey_05.png","Monkey_06.png","Monkey_07.png","Monkey_08.png","Monkey_09.png","Monkey_10.png");
-  bananaImage = loadImage("banana.png");
+  starImage = loadImage("banana.png");
   obstacleImage = loadImage("stone.png");
   gameOverImg = loadImage("gameOver.png");
 }
@@ -41,7 +41,7 @@ function setup() {
 
   gameOver.visible = false;
 
-  FoodGroup = createGroup();
+  starGroup = createGroup();
   obstacleGroup = createGroup(); 
 }
 
@@ -64,8 +64,8 @@ function draw() {
 
 
 
-  if(FoodGroup. isTouching(player)){
-    FoodGroup.destroyEach();
+  if(starGroup. isTouching(player)){
+    starGroup.destroyEach();
     score = score+2;
     player.scale += 0.030;
   }
@@ -77,7 +77,7 @@ function draw() {
   
 
   
-  spawnFood()
+  spawnStar()
   spawnObstacle ()
 
   drawSprites();
@@ -107,16 +107,16 @@ drawSprites();
 }
 
 
-function spawnFood(){
+function spawnStar(){
   if (frameCount % 80 === 0) {
-  banana = createSprite( 200,330,330,40);
-  banana.y = Math.round(random(120,200));
-  banana.addImage(bananaImage);
-  banana.scale = 0.1; 
-  banana.velocityX = -4;
-  banana.lifetime = 300;
-  FoodGroup.add(banana);
-  player.depth = banana.depth+1;
+  star = createSprite( 200,330,330,40);
+  star.y = Math.round(random(120,200));
+  star.addImage(starImage);
+  star.scale = 0.1; 
+  star.velocityX = -4;
+  star.lifetime = 300;
+  starGroup.add(star);
+  player.depth = star.depth+1;
 
     
     
